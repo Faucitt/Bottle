@@ -8,11 +8,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import uni.me.faucitt.bottle.commands.CommandExecutor;
 import uni.me.faucitt.bottle.exceptions.BottleException;
+import uni.me.faucitt.bottle.listeners.PlayerListener;
 
 public class Bottle extends JavaPlugin {
 	
 	public static List<BottleException> bottleExceptions = new ArrayList<BottleException>();
 	public static List<Command> commands = new ArrayList<Command>();
+	public PlayerListener playerListener;
 	
 	public void onEnable() {
 		Command commandBottle = null;
@@ -22,6 +24,8 @@ public class Bottle extends JavaPlugin {
 		commands.add(commandBottle);
 		
 		getCommand("bottle").setExecutor(new CommandExecutor(this));
+		
+		playerListener = new PlayerListener(this);
 	}
 	
 	public void onDisable() {
