@@ -16,6 +16,7 @@ public class BottleConfiguration {
 	public static boolean giveOpDiamond;
 	public static boolean giveEnderChest;
 	public static boolean restoreFullHealth;
+	public static boolean fakeExplosionJoin;
 
 	public static String commandOnJoin;
 }

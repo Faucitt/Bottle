@@ -79,5 +79,9 @@ public class PlayerListener implements Listener {
 				&& BottleConfiguration.commandOnJoin != "") {
 			server.dispatchCommand(player, BottleConfiguration.commandOnJoin);
 		}
+		
+		if (BottleConfiguration.fakeExplosionJoin) {
+			player.getWorld().createExplosion(player.getLocation(), 0);
+		}
 	}
 }
