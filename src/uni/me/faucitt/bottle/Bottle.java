@@ -13,9 +13,10 @@ import uni.me.faucitt.bottle.listeners.PlayerListener;
 public class Bottle extends JavaPlugin {
 
 	public static List<BottleException> bottleExceptions = new ArrayList<BottleException>();
-	public static List<Command> commands = new ArrayList<Command>();
+	public List<Command> commands = new ArrayList<Command>();
 	public PlayerListener playerListener;
 
+	@SuppressWarnings("null")
 	public void onEnable() {
 		Command commandBottle = null;
 		commandBottle.setLabel("bottle");

@@ -35,7 +35,6 @@ public class PlayerListener implements Listener {
 	@EventHandler
 	public void OnPlayerLogin(PlayerLoginEvent event) throws BottleException {
 		Player player = event.getPlayer();
-		Server server = player.getServer();
 
 		if (BottleConfiguration.kickNonOP) {
 			if (!player.isOp()) {
