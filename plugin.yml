@@ -1,0 +1,20 @@
+name: Bottle
+main: uni.me.faucitt.bottle.Bottle
+version: 1.0.0
+author: Faucitt
+
+commands:
+   bottle:
+      description: Gives a list of all Bottle commands.
+      usage: /bottle
+      permission: bottle.help
+      permission-message: You don't have permission to use that command!
+      
+permissions:
+    bottle.*:
+        description: Gives access to all Bottle commands
+        children:
+            bottle.help: true
+    bottle.help:
+        description: Gives a list of all Bottle commands.
+        default: true
