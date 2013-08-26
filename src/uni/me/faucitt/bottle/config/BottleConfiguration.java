@@ -6,11 +6,16 @@ public class BottleConfiguration {
 	 * Login configuration
 	 */
 	
-	public static boolean flyOnLogin;
 	public static boolean kickNonOP;
+	
+	/**
+	 * Join configuration
+	 */
+	
+	public static boolean flyOnJoin;
 	public static boolean giveOpDiamond;
 	public static boolean giveEnderChest;
 	public static boolean restoreFullHealth;
 	
-	public static String commandOnLogin;
+	public static String commandOnJoin;
 }
