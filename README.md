@@ -3,18 +3,14 @@
 Bottle
 ======
 
-A Leaking plugin that extends the abilities of the server and API.
-
-Once Future is ready for public release, this will be supported for it.
+A Leaking plugin for Faucitt servers which extends the default features of the server to the bleeding-edge point.
 
 How to Use
 ======
 
 Simply drag 'n' drop the plugin into your plugins folder on your Faucitt server.
 
-To install a plugin made with Bottle ```1.6.2``` then ensure that Bottle is installed on your server, and drag 'n' drop.
-
 Contributing
 ======
 
-You must add Faucitt and Leaking API as references in your Java IDE in order to not get a ton of errors.
+You must add the Leaking API as well as Faucitt as references in your Java project in order to not get a ton of errors.
