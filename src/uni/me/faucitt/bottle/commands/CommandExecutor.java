@@ -6,9 +6,9 @@ import org.bukkit.command.CommandSender;
 import uni.me.faucitt.bottle.Bottle;
 
 public class CommandExecutor implements org.bukkit.command.CommandExecutor {
-	
+
 	private Bottle plugin;
-	
+
 	public Bottle getPlugin() {
 		return plugin;
 	}
@@ -22,12 +22,14 @@ public class CommandExecutor implements org.bukkit.command.CommandExecutor {
 	}
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+	public boolean onCommand(CommandSender sender, Command cmd, String label,
+			String[] args) {
 		if (cmd.getName().equalsIgnoreCase("bottle")) {
 			sender.sendMessage("Bottle is a major plugin for Faucitt servers.");
 			sender.sendMessage("~~~ List of Faucitt Commands ~~~");
 			for (Command c : plugin.commands) {
-				sender.sendMessage("/" + c.getName() + " - " + c.getDescription());
+				sender.sendMessage("/" + c.getName() + " - "
+						+ c.getDescription());
 			}
 		}
 		return false;

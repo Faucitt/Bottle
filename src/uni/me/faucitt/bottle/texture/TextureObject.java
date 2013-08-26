@@ -4,9 +4,8 @@ import java.io.IOException;
 
 import uni.me.faucitt.bottle.resources.ResourceManager;
 
-public interface TextureObject
-{
-    void loadTexture(ResourceManager var1) throws IOException;
+public interface TextureObject {
+	void loadTexture(ResourceManager var1) throws IOException;
 
-    int textureID();
+	int textureID();
 }
