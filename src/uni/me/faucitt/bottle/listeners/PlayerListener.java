@@ -1,11 +1,14 @@
 package uni.me.faucitt.bottle.listeners;
 
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
+import org.bukkit.inventory.ItemStack;
 
 import uni.me.faucitt.bottle.Bottle;
 import uni.me.faucitt.bottle.config.BottleConfiguration;
@@ -37,6 +40,16 @@ public class PlayerListener implements Listener {
     		player.setAllowFlight(true);
     	}
     	
+    	if (BottleConfiguration.giveEnderChest) {
+    		player.getInventory().addItem(new ItemStack(Material.ENDER_CHEST, 1));
+    	}
+    	
+    	if (BottleConfiguration.giveOpDiamond) {
+    		if (player.isOp()) {
+    			player.getInventory().addItem(new ItemStack(Material.DIAMOND, 1));
+    		}
+    	}
+    	
     	if (BottleConfiguration.kickNonOP) {
     		if (!player.isOp()) {
     			event.disallow(Result.KICK_OTHER, "Only ops can join this server! Contact the server administrator!");
@@ -47,5 +60,8 @@ public class PlayerListener implements Listener {
     	if (BottleConfiguration.commandOnLogin != null && BottleConfiguration.commandOnLogin != "") {
     		server.dispatchCommand(player, BottleConfiguration.commandOnLogin);
     	}
+    	
+    	player.setHealth(20.0);
+    	player.sendMessage(ChatColor.AQUA + "[" + ChatColor.RED + "Bottle" + ChatColor.AQUA + "] " + ChatColor.GOLD + "Health restored to " + ChatColor.GREEN + "20" + ChatColor.GOLD + "/" + ChatColor.RED + "20.");
     }
 }
