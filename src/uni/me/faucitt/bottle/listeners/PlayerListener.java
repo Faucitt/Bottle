@@ -15,6 +15,7 @@ public class PlayerListener implements Listener {
 	
 	public PlayerListener(Bottle plugin) {
 		this.plugin = plugin;
+		plugin.getServer().getPluginManager().registerEvents(this, plugin);
 	}
 
 	public Bottle getPlugin() {
